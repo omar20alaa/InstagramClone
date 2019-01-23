@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.instagram.instagramclone"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
+
+    // butterKnife
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+    // cardview
+    api 'androidx.cardview:cardview:1.0.0'
+
+    // recyclerview
+    api 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
+
+    // support design
+    api 'com.google.android.material:material:1.1.0-alpha01'
+
+    // material edittext
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    // firebase
+    api 'com.google.firebase:firebase-core:16.0.5'
+    api 'com.google.firebase:firebase-storage:16.0.5'
+    api 'com.google.firebase:firebase-auth:16.0.5'
+    api 'com.google.firebase:firebase-database:16.0.5'
+
+    // circle image view
+    api 'de.hdodenhof:circleimageview:2.2.0'
+
+    // glide
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    // image cropper
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    // stories progress view
+    api 'com.github.shts:StoriesProgressView:3.0.0'
+
+
+}
+apply plugin: 'com.google.gms.google-services'
